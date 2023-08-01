@@ -1,5 +1,11 @@
 # @timmattison/uprotect-fetch
 
+## 0.0.5
+
+### Patch Changes
+
+- 42cd402: Trying to make the package public in package.json so NPM doesn't tell me I have to pay
+
 ## 0.0.4
 
 ### Patch Changes
