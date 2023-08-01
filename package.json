@@ -1,7 +1,7 @@
 {
   "name": "@timmattison/uprotect-fetch",
   "license": "Apache-2.0",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Fetches video from UniFi protect",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
