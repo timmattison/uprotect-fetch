@@ -18,6 +18,7 @@ export enum StatusType {
   DownloadThroughput,
   Converting,
   Done,
+  AllDone,
   Error,
 }
 
@@ -50,11 +51,17 @@ export interface DoneStatus {
   filename: string
 }
 
+export interface AllDoneStatus {
+  type: StatusType.AllDone
+  files: OutputFileType[]
+}
+
 export type Status =
   | WaitingStatus
   | DownloadingStatus
   | DownloadThroughput
   | DoneStatus
+  | AllDoneStatus
   | ConvertingStatus
   | ErrorStatus
 
@@ -371,6 +378,11 @@ export async function fetchVideo(args: {
       })
     }
   }
+
+  args.statusCallback?.({
+    type: StatusType.AllDone,
+    files: outputFiles,
+  })
 
   return outputFiles
 }
