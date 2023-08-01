@@ -1,5 +1,11 @@
 # @timmattison/uprotect-fetch
 
+## 0.0.6
+
+### Patch Changes
+
+- e881e30: Another attempt to make the package public
+
 ## 0.0.5
 
 ### Patch Changes
