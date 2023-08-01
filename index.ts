@@ -305,7 +305,7 @@ export async function fetchVideo(args: {
 
       const baseFilename = `${formattedStart}_${formattedEnd}_${
         camera.name ?? camera.id
-      }`
+      }`.replace(/ /g, '_')
       const mp4Filename = `${baseFilename}.mp4`
       const mkvFilename = `${baseFilename}.mkv`
 
