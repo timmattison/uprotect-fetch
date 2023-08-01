@@ -17,6 +17,7 @@ export enum StatusType {
   Downloading,
   DownloadThroughput,
   Converting,
+  Done,
   Error,
 }
 
@@ -44,10 +45,16 @@ export interface DownloadThroughput {
   throughputString: string
 }
 
+export interface DoneStatus {
+  type: StatusType.Done
+  filename: string
+}
+
 export type Status =
   | WaitingStatus
   | DownloadingStatus
   | DownloadThroughput
+  | DoneStatus
   | ConvertingStatus
   | ErrorStatus
 
@@ -348,11 +355,20 @@ export async function fetchVideo(args: {
         fs.unlinkSync(mp4Filename)
       }
 
+      const currentFilename = args.mp4 ? mp4Filename : mkvFilename
+
       outputFiles.push({
         cameraName: camera.name ?? camera.id,
         start: args.start,
         end: args.end,
-        filename: args.mp4 ? mp4Filename : mkvFilename,
+        filename: currentFilename,
+      })
+
+      console.log('Done downloading', currentFilename)
+
+      args.statusCallback?.({
+        type: StatusType.Done,
+        filename: currentFilename,
       })
     }
   }
