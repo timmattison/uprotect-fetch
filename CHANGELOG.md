@@ -1,5 +1,11 @@
 # @timmattison/uprotect-fetch
 
+## 0.0.4
+
+### Patch Changes
+
+- 3426228: Some package.json cleanup
+
 ## 0.0.3
 
 ### Patch Changes
