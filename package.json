@@ -12,7 +12,7 @@
     "lint": "eslint --ext .ts --fix . -c .eslintrc.cjs"
   },
   "type": "module",
-  "author": "",
+  "author": "Tim Mattison",
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
     "@types/fluent-ffmpeg": "^2.1.21",
