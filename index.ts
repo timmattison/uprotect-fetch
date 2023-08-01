@@ -365,8 +365,6 @@ export async function fetchVideo(args: {
         filename: currentFilename,
       })
 
-      console.log('Done downloading', currentFilename)
-
       args.statusCallback?.({
         type: StatusType.Done,
         filename: currentFilename,
