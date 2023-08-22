@@ -112,14 +112,15 @@ async function postWithCookies(
 function safeUpdateCookie(cookie: string, updatedCookies: Cookies) {
   const splitCookie = cookie.split(';')
 
-  if (splitCookie.length !== 1) return
-  if (splitCookie[0] === undefined) return
+  if (splitCookie.length === 0) return
 
-  const [key, value] = splitCookie[0].split('=')
+  for (const currentCookie of splitCookie) {
+    const [key, value] = currentCookie.split('=')
 
-  if (key === undefined || value === undefined) return
+    if (key === undefined || value === undefined) return
 
-  updatedCookies[key.trim()] = value.trim()
+    updatedCookies[key.trim()] = value.trim()
+  }
 }
 
 function percent(input: number | undefined) {
