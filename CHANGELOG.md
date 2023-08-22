@@ -1,5 +1,11 @@
 # @timmattison/uprotect-fetch
 
+## 0.1.1
+
+### Patch Changes
+
+- a7ea5e1: Replace spaces in filenames with underscores
+
 ## 0.1.0
 
 ### Minor Changes
