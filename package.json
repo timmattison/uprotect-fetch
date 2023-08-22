@@ -8,8 +8,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup index.ts --format cjs,esm --dts",
-    "start": "node ubiquiti-video.js",
-    "lint": "eslint --ext .ts --fix . -c .eslintrc.cjs"
+    "lint": "eslint --ext .ts --fix . -c .eslintrc.cjs",
+    "release": "pnpm run build && changeset publish"
   },
   "type": "module",
   "author": "Tim Mattison",
