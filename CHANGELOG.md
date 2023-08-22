@@ -1,5 +1,11 @@
 # @timmattison/uprotect-fetch
 
+## 0.1.0
+
+### Minor Changes
+
+- 6590d36: Fixed broken cookie handling, added done and all done statuses
+
 ## 0.0.6
 
 ### Patch Changes
